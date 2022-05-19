@@ -9,7 +9,7 @@ function TodoForm(props) {
   const [value, handleChange, reset] = useInputState("");
 
   return (
-    <Paper>
+    <Paper style={{ padding: "0", margin: "1rem 0" }}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -17,7 +17,13 @@ function TodoForm(props) {
           reset();
         }}
       >
-        <TextField value={value} onChange={handleChange}></TextField>
+        <TextField
+          value={value}
+          onChange={handleChange}
+          margin='normal'
+          label='Add New Todo'
+          fullWidth
+        ></TextField>
       </form>
     </Paper>
   );
