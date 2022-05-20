@@ -39,6 +39,13 @@ function TodoApp() {
     setTodos(updatedTodos);
   };
 
+  const editTodo = (todoId, newTodoText) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === todoId ? { ...todo, task: newTodoText } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
   return (
     <Paper elevation={0} style={{ height: "100vh", padding: 0, margin: 0 }}>
       <AppBar color='primary' position='static' style={{ height: "64px" }}>
@@ -53,6 +60,7 @@ function TodoApp() {
             todos={todos}
             removeTodo={removeTodo}
             toggleTodo={toggleTodo}
+            editTodo={editTodo}
           />
         </Grid>
       </Grid>

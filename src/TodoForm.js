@@ -1,4 +1,6 @@
 import React from "react";
+
+// Hooks
 import useInputState from "./hooks/useInputState";
 
 // Material UI
