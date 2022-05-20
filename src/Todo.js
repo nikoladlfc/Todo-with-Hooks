@@ -19,7 +19,7 @@ function Todo({ task, id, completed, removeTodo, toggleTodo, editTodo }) {
   const [isEditing, toggle] = useToggleState(false);
 
   return (
-    <ListItem>
+    <ListItem style={{ height: "64px", paddingTop: 0 }}>
       {isEditing ? (
         <EditTodoForm
           value={task}
