@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
 function TodoApp() {
-  const initialTodos = JSON.parse(localStorage.getItem("todos") || "");
+  const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
 
   const { todos, addTodo, removeTodo, toggleTodo, editTodo } =
     useTodoState(initialTodos);
@@ -25,12 +25,12 @@ function TodoApp() {
 
   return (
     <Paper elevation={0} style={{ height: "100vh", padding: 0, margin: 0 }}>
-      <AppBar color='primary' position='static' style={{ height: "64px" }}>
+      <AppBar color="primary" position="static" style={{ height: "64px" }}>
         <Toolbar>
           <Typography>Todo with Hooks</Typography>
         </Toolbar>
       </AppBar>
-      <Grid container justifyContent='center' style={{ marginTop: "1rem" }}>
+      <Grid container justifyContent="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addTodo={addTodo} />
           <TodoList
